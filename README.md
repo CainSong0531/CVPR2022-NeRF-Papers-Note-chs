@@ -1,12 +1,12 @@
 # Survey-On-CVPR2022-NeRF-Papers-chs
 
-# NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
+## NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis
 
-## 研究成果
+### 研究成果
 
 一个神经网络，以同一个物体/场景在不同视角下的图像及其对应视角作为数据集，生成这个物体/场景在全新的视角下的新的图像. 
 
-## 实现方式
+### 实现方式
 
 ![NeRF structure](/Assets/Images/NeRF%20structure.png)
 需要训练的网络只有(a)到(b)的这一部分，这一部分的网络用于估计在给定的视角和位置下，一点的密度和颜色. 
@@ -17,33 +17,33 @@ $\sigma_j$和$\delta_j$分别表示第$j$个采样点的密度和到上一个采
 
 (d)表示这个网络的损失函数就是图像上每条光线最终呈现的颜色与真实颜色之差的2-范数之和，神经网络训练的后向传播阶段将这个损失经过可微的(c)传回神经网络并修正网络的权重. 
 
-## 网络优化
+### 网络优化
 
-### 位置编码
+#### 位置编码
 
 如果仅仅以三维空间中的坐标作为输入，容易对低频色彩的输入产生过拟合，所以本文将每个空间维度上的坐标分解成多个不同频率的编码，再将其作为神经网络的输入：
 ![NeRF Formula 2](/Assets/Images/NeRF%20Formula%202.png)
 
-### 分级采样
+#### 分级采样
 
 每次都在光线路径上完整采样效率低下，所以本文将采样过程分成了粗采样和精采样两个阶段，粗采样在光线路径上均匀采样但设置较大的间隔，随后再根据粗采样的结果选定精采样区间，以略过空白和被遮挡的空间. 最后的损失函数也相应变为粗采样得到的颜色与精采样得到的颜色之和. 
 
-# Point-NeRF: Point-based Neural Radiance Fields
+## Point-NeRF: Point-based Neural Radiance Fields
 
 （待整理）
 
-# FENeRF: Face Editing in Neural Radiance Fields
+## FENeRF: Face Editing in Neural Radiance Fields
 
 （待整理）
 
-# NeRFusion: Fusing Radiance Fields for Large-Scale Scene Reconstruction
+## NeRFusion: Fusing Radiance Fields for Large-Scale Scene Reconstruction
 
 （待整理）
 
-# GeoNeRF: Generalizing NeRF with Geometry Priors
+## GeoNeRF: Generalizing NeRF with Geometry Priors
 
 （待整理）
 
-# CLIP-NeRF: Text-and-Image Driven Manipulation of Neural Radiance Fields
+## CLIP-NeRF: Text-and-Image Driven Manipulation of Neural Radiance Fields
 
 （待整理）
